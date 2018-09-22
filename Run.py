@@ -32,17 +32,8 @@ while True:
             botCount += 1
 
             #says hi to new chatters
-            for i in hello:
-                if i != user:
-                    count += 1
-                    if count >= len(hello):
-                        hello.append(user)
-                        sendMessage(s, "Hello " + user + " :)")
-                        count = 0
-                        break
-                elif i == user:
-                    count = 0
-                    break
+            if user not in hello:
+                sendMessage(s, "Hello " + user + " :)")
 
             #Bot commands
             if "!Event" in line:
